@@ -1,5 +1,8 @@
 Directly logging in a user in Django tests
-#parser reST
+##########################################
+
+:date: 2010-09-28 01:50
+:slug: tech/17-directly-logging-in-a-user-in-django-tests
 
 The `examples for Django testing`_ point you towards hardcoding a
 username and password for a user to impersonate in tests, and

@@ -20,19 +20,26 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = ()
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('Twitter', 'https://twitter.com/jdwestby'),
+          ('GitHub', 'https://github.com/james-w/'),
+        )
 
-DEFAULT_PAGINATION = False
+DEFAULT_PAGINATION = 20
 
 THEME = 'pelican-bootstrap3'
 BOOTSTRAP_THEME = 'readable'
+
+DISPLAY_CATEGORIES_ON_MENU = False
+DISPLAY_CATEGORIES_ON_SIDEBAR = True
+DISPLAY_PAGES_ON_MENU = True
+
+CC_LICENSE = "CC-BY-SA"
+
+TWITTER_CARDS = True
+TWITTER_USERNAME = 'jdwestby'
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True

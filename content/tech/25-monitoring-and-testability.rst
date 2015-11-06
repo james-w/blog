@@ -1,5 +1,8 @@
 Monitoring and Testability
-#parser reST
+##########################
+
+:date: 2012-05-15 03:15
+:slug: tech/25-monitoring-and-testability
 
 At UDS last week there was another "Testing in Ubuntu" session. During the
 event I gave a brief presentation on monitoring and testability. The thesis

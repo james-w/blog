@@ -1,5 +1,8 @@
 Evolutionary Computing and Creationism
-#parser reST
+######################################
+
+:date: 2007-10-22 21:15
+:slug: tech/02-evolutionary-computing-creationism
 
 The lecturer who taught me evolutionary computing was also a devout Christian,
 who believed that the world is the way that it is because God created it,

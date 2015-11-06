@@ -1,5 +1,8 @@
 Indicator support for Empathy
-#parser reST
+#############################
+
+:date: 2009-04-06 00:11
+:slug: tech/10-indicator-support-for-empathy
 
 As well as the new notification bubbles, jaunty now has something called
 the "indicator-applet", or various other names. If you are running Jaunty

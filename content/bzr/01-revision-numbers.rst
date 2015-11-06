@@ -1,4 +1,8 @@
 Revision numbers
+################
+
+:date: 2008-03-13 16:49
+:slug: bzr/01-revision-numbers
 
 
 Revision numbers vs. revision ids

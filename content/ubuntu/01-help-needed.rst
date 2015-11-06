@@ -1,5 +1,8 @@
 Help needed
-#parser reST
+###########
+
+:date: 2008-08-17 00:47
+:slug: ubuntu/01-help-needed
 
 The server team `asked me`_ to write a blog post to ask for help removing the
 use of "multiuser" as an argument to update-rc.d. This used to be the way that

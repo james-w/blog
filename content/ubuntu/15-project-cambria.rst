@@ -1,5 +1,8 @@
 Project Cambria
-#parser reST
+###############
+
+:date: 2010-02-01 01:35
+:slug: ubuntu/15-project-cambria
 
 `David`_, it's interesting that you posted about that, as it's something I've been toying with
 for the last couple of years. For the last few months I've been (very) slowly experimenting

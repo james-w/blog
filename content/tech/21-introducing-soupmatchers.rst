@@ -1,5 +1,8 @@
 Introducing soupmatchers
-#parser reST
+########################
+
+:date: 2010-12-23 02:45
+:slug: tech/21-introducing-soupmatchers
 
 jml `just announced testtools 0.9.8`_ and in it mentioned the `soupmatchers`_
 project that I started. Given that I haven't talked about it here before, I wanted to

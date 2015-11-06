@@ -1,5 +1,8 @@
 First day of the Linaro Connect
-#parser reST
+###############################
+
+:date: 2011-08-01 12:54
+:slug: tech/24-first-day-of-linaro-connect
 
 Today is the first day of the `Linaro Connect`_ in Cambridge. Linaro has
 gathered to spend a week talking, coding and having fun.
@@ -13,6 +16,7 @@ In order to help us focus on our goals for the week I've put together
 a hard copy version of `status.linaro.org`_.
 
 .. image:: /images/connect-progress-start.jpg
+    :alt: A large piece of paper, with hand drawn progress bars for each of 5 projects.
 
 We'll be updating it during the week as we make progress. I'll report
 back on how it looks at the end of the week.

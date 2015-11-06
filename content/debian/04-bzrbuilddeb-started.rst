@@ -1,4 +1,8 @@
 bzr-builddeb started
+####################
+
+:date: 2006-08-12 17:08
+:slug: debian/04-bzrbuilddeb-started
 
 The other day I decided I wanted to try out one of the more modern revision
 control systems. I decided on `bzr`_ as it seemed to have some features that I

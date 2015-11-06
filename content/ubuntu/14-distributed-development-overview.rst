@@ -1,5 +1,8 @@
 Ubuntu Distributed Development Overview
-#parser reST
+#######################################
+
+:date: 2009-12-16 22:49
+:slug: ubuntu/14-distributed-development-overview
 
 You may well have heard about it (on this blog especially),
 but though I spend lots of my time involved with it and talking

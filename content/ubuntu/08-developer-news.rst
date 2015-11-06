@@ -1,5 +1,8 @@
 Developer News
-#parser reST
+##############
+
+:date: 2009-02-26 18:02
+:slug: ubuntu/08-developer-news
 
 The second installment of `Developer News`_ went `out on Monday`_, and boy was it
 hard work. It's great to see so much going on, but it does make preparing the

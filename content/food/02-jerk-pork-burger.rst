@@ -1,5 +1,8 @@
 Jerk Pork Burger with Green Apple Slaw
-#parser reST
+######################################
+
+:date: 2008-04-25 14:59
+:slug: food/02-jerk-pork-burger
 
 Thanks to `richb`_ I found `this recipe`_  for "Jerk Pork Burgers with
 Green Apple Slaw", and they are fantastic. The Slaw is particularly good,

@@ -1,5 +1,8 @@
 Couchapp Walkthrough - Part 1
-#parser reST
+#############################
+
+:date: 2010-09-29 00:48
+:slug: tech/18-couchapp-walkthrough-part-1
 
 Couchapps are a particular way of using couchdb that allow you to
 serve web applications directly from the database. These applications generate

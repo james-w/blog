@@ -1,5 +1,8 @@
 Jaunty's almost ready
-#parser reST
+#####################
+
+:date: 2009-04-21 00:14
+:slug: ubuntu/09-jaunty-almost-ready
 
 Jaunty just froze a little bit more, with the last few normal uploads being
 done. From here on in it's mainly about getting the CDs perfect for release,

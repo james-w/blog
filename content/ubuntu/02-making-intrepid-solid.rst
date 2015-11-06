@@ -1,5 +1,8 @@
 Making Intrepid Solid
-#parser reST
+#####################
+
+:date: 2008-08-28 12:51
+:slug: ubuntu/02-making-intrepid-solid
 
 Making Intrepid Solid
 =====================

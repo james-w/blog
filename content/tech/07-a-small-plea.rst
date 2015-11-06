@@ -1,5 +1,8 @@
 A small plea
-#parser reST
+############
+
+:date: 2008-11-28
+:slug: tech/07-a-small-plea
 
 I have a small request to make. When writing a changelog entry please
 remember you are writing it for other people to read as well. Please

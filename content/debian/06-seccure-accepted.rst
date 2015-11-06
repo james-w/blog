@@ -1,4 +1,8 @@
 Subject: seccure_0.2-1_i386.changes ACCEPTED
+############################################
+
+:date: 2006-08-23 00:18
+:slug: debian/06-seccure-accepted
 
 
 I returned today and I had received the email I had been waiting for.

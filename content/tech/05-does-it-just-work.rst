@@ -1,5 +1,8 @@
 Does it just work?
-#parser reST
+##################
+
+:date: 2008-08-16 23:37
+:slug: tech/05-does-it-just-work
 
 I recently attended Lugradio Live in Wolverhampton. During
 the live recording of the show they were discussing how things have

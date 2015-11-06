@@ -1,5 +1,8 @@
 Some advantages of having packages in Bazaar
-#parser reST
+############################################
+
+:date: 2008-09-12 02:41
+:slug: ubuntu/03-some-advantages-of-packages-in-bzr
 
 After some discussions in the last week or so I decided to finally
 get around to something that I have been promising for ages: making

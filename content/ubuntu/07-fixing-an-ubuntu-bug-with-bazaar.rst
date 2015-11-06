@@ -1,5 +1,8 @@
 Fixing an Ubuntu bug with Bazaar
-#parser reST
+################################
+
+:date: 2009-01-22 17:34
+:slug: ubuntu/07-fixing-an-ubuntu-bug-with-bazaar
 
 Yesterday as part of `Ubuntu Developer Week`_ I gave a session entitled
 "Bazaar for Packaging". At the last minute I decided to change the session

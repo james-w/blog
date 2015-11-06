@@ -1,5 +1,8 @@
 Lady Day
-#parser reST
+########
+
+:date: 2009-03-25
+:slug: tech/09-lady-day
 
 This was supposed to be an `Ada Lovelace Day`_ post, but jet lag got the better of me last
 night before I could write it, so it's a `Lady Day`_ post instead, which is strangely apt.

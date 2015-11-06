@@ -1,8 +1,11 @@
 Facebook and copyright
-#parser reST
+######################
+
+:date: 2007-03-07 22:25
+:slug: life/01-facebook-copyright
 
 A lot of my friends are on the `Facebook`_ site, and they upload pictures
-there, so I joined to see those. One of the things the sute has is a profile
+there, so I joined to see those. One of the things the site has is a profile
 picture, and I wanted to upload one for me. I chose one and entered the
 filename in the box. The other part of the form was a checkbox to accept the
 terms of use for the site. Presumably every user accepts these as they sign

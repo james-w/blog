@@ -1,4 +1,8 @@
 Version control systems and text editors
+########################################
+
+:date: 2008-03-12 01:25
+:slug: bzr/00-git-vim
 
 
 So apparently "`learning git is like learning vim`_". Putting aside

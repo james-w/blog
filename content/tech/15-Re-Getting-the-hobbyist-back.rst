@@ -1,5 +1,8 @@
 Re: Getting the hobbyist back
-#parser reST
+#############################
+
+:date: 2010-04-30 14:59
+:slug: tech/15-Re-Getting-the-hobbyist-back
 
 Dear `Mr Neary`_, thanks for your thought provoking post, I think it is a
 problem we need to be aware of as Free Software matures.

@@ -1,10 +1,14 @@
 Improving the usability of launchpadlib-using code
-#parser reST
+##################################################
+
+:date: 2010-07-07 21:17
+:slug: tech/16-Improving-the-usability-of-launchpadlib-using-code
 
 Normally when you write some code using launchpadlib you end up with Launchpad
 showing your users something like this:
 
 .. image:: /images/lplib-before.png
+    :alt: A Launchpad page asking for the user to choose between 5 levels of access.
 
 This isn't great, how is the user supposed to know which option to click? What
 do you do if they don't choose the option you want?
@@ -22,6 +26,7 @@ changing the way you create your Launchpad object.
 This will present your users with something like this:
 
 .. image:: /images/lplib-after.png
+    :alt: The same launchpad page, but with only 2 options instead of the previous 5.
 
 which is easier to understand. There could be further improvements, but they would
 happen on the Launchpad side.

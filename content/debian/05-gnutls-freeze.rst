@@ -1,4 +1,8 @@
 GnuTLS freeze for etch
+######################
+
+:date: 2006-08-14 00:02
+:slug: debian/05-gnutls-freeze
 
 
 We hadn't really realised but some gnutls related packages are ``Priority:

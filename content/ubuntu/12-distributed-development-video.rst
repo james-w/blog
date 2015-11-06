@@ -1,5 +1,8 @@
 Distributed Development Video
-#parser reST
+#############################
+
+:date: 2009-08-18 13:03
+:slug: ubuntu/12-distributed-development-video
 
 I recently gave a talk to some fellow Canonical employees about where we are
 with the "Distributed Development" project. For that I made a screencast showing

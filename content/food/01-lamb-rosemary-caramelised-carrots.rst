@@ -1,5 +1,8 @@
 Rosemary Lamb with Roast Potatoes and Caramelised Carrots and Onions
-#parser reST
+####################################################################
+
+:date: 2007-10-18 18:52
+:slug: food/01-lamb-rosemary-caramelised-carrots
 
 I came up with this the other day. It's pretty rich and indulgent, but
 not too hard to make. The lamb could perhaps do with something else, but

@@ -1,5 +1,8 @@
 What I work on
-#parser reST
+##############
+
+:date: 2010-09-14
+:slug: ubuntu/19-what-I-work-on
 
 I'm keen to try and write more about the things that I work on as part of my
 job at Canonical. In order to get started I wanted to write a summary of some

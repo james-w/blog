@@ -1,5 +1,8 @@
 Tempted by a stage dive
-#parser reST
+#######################
+
+:date: 2008-08-07 02:28
+:slug: tech/04-tempted-by-a-stage-dive
 
 Hello Planet Ubuntu.
 

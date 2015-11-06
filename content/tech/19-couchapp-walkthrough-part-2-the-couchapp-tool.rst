@@ -1,5 +1,8 @@
 Couchapp Walkthrough: Part 2: The couchapp tool
-#parser reST
+###############################################
+
+:date: 2010-09-30 00:48
+:slug: tech/19-couchapp-walkthrough-part-2-the-couchapp-tool
 
 Today I would like to talk about the couchapp tool. This is something that you can use when working on couchapps, and provides a way to quickly iterate your design.
 

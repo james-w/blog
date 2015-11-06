@@ -1,5 +1,8 @@
 Some of my best friends are Unicorns
-#parser reST
+####################################
+
+:date: 2010-03-25
+:slug: tech/13-some-of-my-best-friends-are-unicorns
 
 As my contribution to Ada Lovelace Day 2010 I would like to mention
 `Emma Jane Hogbin`_.

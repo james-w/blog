@@ -1,5 +1,8 @@
 Free Music
-#parser reST
+##########
+
+:date: 2009-06-07 22:49
+:slug: life/04-free-music
 
 I came across Anthony Raijekov the other day, and was treated to some of his
 Trip-Hop, which is outstanding. That was an added bonus though, as I sought him

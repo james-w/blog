@@ -1,5 +1,8 @@
 Commit access is no more
-#parser reST
+########################
+
+:date: 2009-11-27 05:54
+:slug: tech/12-commit-access-is-no-more
 
 Many projects that I work on, or follow the development of, and granted there may
 be a large selection bias here, are showing some of the same tendencies. Combined

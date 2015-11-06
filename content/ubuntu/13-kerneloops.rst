@@ -1,5 +1,8 @@
 Kerneloops enabled by default in Karmic
-#parser reST
+#######################################
+
+:date: 2009-09-23 16:56
+:slug: ubuntu/13-kerneloops
 
 One of the new things that is going to be in karmic is that
 the kerneloops daemon will be installed and running by default.

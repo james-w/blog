@@ -1,5 +1,8 @@
 Bazaar branches of Ubuntu
-#parser reST
+#########################
+
+:date: 2008-11-27 14:28
+:slug: ubuntu/05-bazaar-branches-of-ubuntu
 
 This morning I `announced`_ the availability of bzr branches for
 every source package in Ubuntu.

@@ -1,5 +1,8 @@
 The Bazaar Package Importer
-#parser reST
+###########################
+
+:date: 2010-03-14 18:55
+:slug: ubuntu/16-bazaar-packge-importer
 
 The Bazaar package importer is a service that we run to allow people to use
 Bazaar for Ubuntu development by importing any source package uploads in to

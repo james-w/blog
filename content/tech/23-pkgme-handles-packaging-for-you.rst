@@ -1,5 +1,8 @@
 pkgme: handles packaging for you
-#parser reST
+################################
+
+:date: 2011-02-06 19:05
+:slug: tech/23-pkgme-handles-packaging-for-you
 
 If you are an application developer and you want to distribute your new
 application for a linux distribution, then you currently have several

@@ -1,5 +1,8 @@
 ppamadison
-#parser reST
+##########
+
+:date: 2009-01-06 22:13
+:slug: ubuntu/06-ppamadison
 
 After an idea from bigon on #launchpad today I threw together a tool
 using the `Launchpad API`_. I've christened this tool ``ppamadison``.

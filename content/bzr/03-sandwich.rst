@@ -1,4 +1,8 @@
 Sandwiches
+##########
+
+:date: 2009-03-22 13:19
+:slug: bzr/03-sandwich
 
 
 `Mr LeSage`_, I just happened to run ``bzr plugins`` today, and noticed this::

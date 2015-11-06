@@ -1,5 +1,8 @@
 REVU
-#parser reST
+####
+
+:date: 2008-11-06 02:00
+:slug: ubuntu/04-revu
 
 Quality of packages not in Debian
 ---------------------------------

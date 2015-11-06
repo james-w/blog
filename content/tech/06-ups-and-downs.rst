@@ -1,5 +1,8 @@
 Ups and Downs
-#parser reST
+#############
+
+:date: 2008-08-21 01:57
+:slug: tech/06-ups-and-downs
 
 I was thrilled this morning to finally come up with what I hope is a fix for a
 `bug in ConsoleKit`_ that has been plauging a lot of users, judging by the number

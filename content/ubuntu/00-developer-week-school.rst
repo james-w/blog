@@ -1,5 +1,8 @@
 MOTU School sessions for Ubuntu Developer Week wanted
-#parser reST
+#####################################################
+
+:date: 2008-08-14 01:37
+:slug: ubuntu/00-developer-week-school
 
 Next month we have another Ubuntu Developer Week. It's still
 in the planning stage, and there will be a proper announcement

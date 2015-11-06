@@ -1,5 +1,8 @@
 A long anticipated release
-#parser reST
+##########################
+
+:date: 2008-04-25 15:17
+:slug: life/02-anticipated-release
 
 Now that one `important release`_ is out the way it's time to look forward
 to another one. This has been long anticipated, and will probably decide

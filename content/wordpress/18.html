@@ -1,0 +1,41 @@
+<html>
+<head>
+   <title>Getting the xfwm4 compositor to work in xfce4</title>
+   <meta name="date" content="2006-05-06 10:14" />
+   <meta name="slug" content="wordpress/18" />
+</head>
+<body>
+
+<p>I have put together a few pointers on the things that are required to get the compositor to work in xfce4. I have tried to include both 4.2.x and 4.4, but I might have missed something. </p>
+<p>First you need an X server that supports composite, e.g. Xorg 7. You need to edit your xorg.conf file so that it contains.</p>
+<blockquote><p>
+Section &#8220;Extensions&#8221;<br />
+      Option &#8220;Composite&#8221; &#8220;Enable&#8221;<br />
+
+EndSection
+</p></blockquote>
+<p><a id="more-18"></a></p>
+<p>Then you need a version of xfwm4 that supports compositing. If you are compiling from source then you need to use the &#8211;enable-compositor switch (default in 4.4). You also need libxdamage-dev, libxfixes-dev, libxrender-dev and libxcomposite-dev (or whatever your distro calls them). When you are compiling you need to see </p>
+<blockquote><p>
+checking for xcomposite >= 1.0 xfixes xdamage xrender&#8230; yes<br />
+checking COMPOSITOR_CFLAGS&#8230; -DXTHREADS -D_REENTRANT -DXUSE_MTSAFE_API -I/usr/X11R6/include<br />
+checking COMPOSITOR_LIBS&#8230; -L/usr/X11R6/lib -lXcomposite -lXdamage -lXfixes -lXrender -lX11 -lXext
+
+</p></blockquote>
+<p>in the output. If not then I have probably missed a dependency. </p>
+<p>If you are using a packaged version then you need to find out if it was compiled with this support, recent packages probably are.</p>
+<p>Now you need to start xfwm4 with the compositor on, I think this is the default in all versions, but if not when you are running you can do </p>
+<blockquote><p>
+$ pkill xfwm4<br />
+$ xfwm4 &#8211;compositor=on
+</p></blockquote>
+<p>If it&#8217;s not on by default and you want it to be then there are two ways. </p>
+<ol>
+
+<li>If you are using the session manager then simply logging in, enabling saving of sessions, doing the above to start xfwm4 with the compositor then logging out and back in again, and disabling saving of sessions again should do the trick. I would find it easier to edit the files in ~/.cache/sessions, but each to their own</li>
+<li>If you are not using the session manager then edit ~/.xinitrc or /etc/xdg/xfce4/xinitrc</li>
+</ol>
+<p>Once you have the compositor on then you will want something to do with it. There are some settings in window manager tweaks that may be of interest. Also try ALT+scroll wheel on the title bar of an app. You could also look into <a href="http://forchheimer.se/transset-df/">transset-df</a> (or simply <a href="http://webcvs.freedesktop.org/xapps/transset/">transset</a>), or <a href="http://spuriousinterrupt.org/projects/transd">transd</a>, which is kind of like devilspie for transparency. You could also look at my <a href="http://jameswestby.net/blog/?p=11">transparent Terminal patches</a>. I also have patches the implement making inactive windows semi transparent. </p>
+
+</body>
+</html>

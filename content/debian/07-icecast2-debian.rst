@@ -1,4 +1,8 @@
 Setting up Icecast2 on Debian
+#############################
+
+:date: 2006-08-24 01:43
+:slug: debian/07-icecast2-debian
 
 
 Hannah is very interested in radio, and is planning to set up her own Internet

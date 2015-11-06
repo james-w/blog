@@ -2,7 +2,7 @@ The value of primary sources
 ############################
 
 :date: 2012-04-11 21:21
-:slug: life/05-the-value-of-primary-sources.rst
+:slug: life/05-the-value-of-primary-sources
 :category: life
 
 

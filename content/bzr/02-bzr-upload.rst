@@ -1,4 +1,8 @@
 bzr-upload
+##########
+
+:date: 2008-06-24 20:38
+:slug: bzr/02-bzr-upload
 
 
 On Friday `bzr-upload`_ was officialy `announced`_. In the blog

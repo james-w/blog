@@ -1,5 +1,8 @@
 Spiced Lamb burgers with roast veg and mint yoghurt
-#parser reST
+###################################################
+
+:date: 2009-05-04 18:33
+:slug: food/03-spiced-lamb-burgers
 
 This was our dinner last night. There's nothing particularly original here,
 but it was damn tasty. There are no pictures, so you'll have to take my word

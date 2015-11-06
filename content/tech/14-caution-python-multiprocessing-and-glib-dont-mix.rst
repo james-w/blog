@@ -1,5 +1,8 @@
 Caution: python-multiprocessing, threads and glib don't mix
-#parser reST
+###########################################################
+
+:date: 2010-04-08 13:01
+:slug: tech/14-caution-python-multiprocessing-and-glib-dont-mix
 
 If you don't want to read this article, then just steer clear of
 python-multiprocessing, threads and glib in the same application. Let me

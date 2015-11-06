@@ -1,5 +1,8 @@
 Banshee as the default mediaplayer?
-#parser reST
+###################################
+
+:date: 2009-04-21 00:35
+:slug: ubuntu/10-banshee-as-the-default-mediaplayer
 
 Jo Shields `posts about his intention to propose switching Rhythmbox for
 Banshee`_ in Karmic. (I'm trying to convince him to apply to be a MOTU,

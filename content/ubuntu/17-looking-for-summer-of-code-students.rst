@@ -1,5 +1,8 @@
 Looking for Summer of Code students
-#parser reST
+###################################
+
+:date: 2010-03-26 21:58
+:slug: ubuntu/17-looking-for-summer-of-code-students
 
 As you've probably heard by now, `Ubuntu has been accepted to Google Summer of Code
 this year.`_ We're currently at the point where we are looking for students to

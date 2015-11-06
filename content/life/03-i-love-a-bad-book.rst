@@ -1,5 +1,8 @@
 I love a bad book
-#parser reST
+#################
+
+:date: 2008-08-26 01:46
+:slug: life/03-i-love-a-bad-book
 
 Last night I finished reading "Exit A" by Anthony Swofford. I had decided
 a while ago that I didn't like it, but it wasn't so bad that I had to put

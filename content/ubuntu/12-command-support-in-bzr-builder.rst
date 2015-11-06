@@ -1,5 +1,8 @@
 Command support in bzr-builder
-#parser reST
+##############################
+
+:date: 2009-08-18 22:29
+:slug: ubuntu/12-command-support-in-bzr-builder
 
 I've just implemented the most requested feature in bzr-builder
 (Hi `Ted`_), command support.

@@ -1,5 +1,8 @@
 Daily Builds
-#parser reST
+############
+
+:date: 2009-08-04 12:58
+:slug: ubuntu/11-daily-builds
 
 As well as seeing use of PPAs for providing bug fixes, new upstream versions, proposed packages, testing etc., we are also seeing them used for providing daily builds of packages. For instance `Fabien Tassin`_ provides daily builds of lots of Mozilla-related packages and snapshots of Chromium in his various PPAs. Also, there is `Project Neon`_, to provide daily builds of Amarok.
 

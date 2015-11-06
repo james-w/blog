@@ -1,5 +1,8 @@
 Dry Rub Barbeque Trout
-#parser reST
+######################
+
+:date: 2010-03-14 16:23
+:slug: food/04-dry-rub-barbeque-trout
 
 Made this up after buying a nice piece of locally caught freshwater trout.
 I think that it would be even better if you were to hot-smoke it.

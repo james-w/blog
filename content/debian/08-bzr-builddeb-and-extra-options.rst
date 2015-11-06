@@ -1,4 +1,8 @@
 bzr-builddeb and extra options
+##############################
+
+:date: 2009-02-16 20:57
+:slug: debian/08-bzr-builddeb-and-extra-options
 
 I spent today hacking on bzr-builddeb for the first time in a while. The
 first order of business was to review and merge all of the `proposed merges`_

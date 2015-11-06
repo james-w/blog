@@ -1,5 +1,8 @@
 Merging file descriptor output
-#parser reST
+##############################
+
+:date: 2009-06-09 00:38
+:slug: tech/11-merging-file-descriptor-output
 
 I have a problem that I believe will be easy for someone with a bit of
 UNIX coding knowledge to solve, so I appeal to those that can to help.

@@ -1,5 +1,8 @@
 Couchapp Walkthrough: Part 3: Evently
-#parser reST
+#####################################
+
+:date: 2010-10-09 01:56
+:slug: tech/20-couchapp-walkthrough-part-3-evently
 
 [ Apologies to those that saw this half-finished when I published
 rather than saving a draft ]

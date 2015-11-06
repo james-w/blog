@@ -1,5 +1,8 @@
 Couchapp Walkthrough: Part 4: How data gets to the user
-#parser reST
+#######################################################
+
+:date: 2010-12-24 01:16
+:slug: tech/22-couchapp-walkthrough-part-4-how-data-gets-to-the-user
 
 This was the confusing part when I first ran ``couchapp`` to create a new app,
 I couldn't really see where the "entry point" of the app was. In the hope that

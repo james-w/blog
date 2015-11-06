@@ -1,5 +1,8 @@
 Gutenberg's Revolution
-#parser reST
+######################
+
+:date: 2008-05-13
+:slug: tech/03-gutenberg
 
 I love `Stephen Fry`_, everything he does is great, but also seems to come with
 a touch of quality as well. His documentaries are probably a lesser known part

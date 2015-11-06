@@ -1,5 +1,8 @@
 Summer of Code Student Application Deadline
-#parser reST
+###########################################
+
+:date: 2010-04-09 17:00
+:slug: ubuntu/18-summer-of-code-student-application-deadline
 
 The deadline for students to submit their applications to Google for Summer
 of Code is imminent.

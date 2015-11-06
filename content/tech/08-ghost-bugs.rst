@@ -1,5 +1,8 @@
 Ghost Bugs
-#parser reST
+##########
+
+:date: 2009-02-22 13:22
+:slug: tech/08-ghost-bugs
 
 Please consider the following hypothetical situation. ``gnome-screensaver``
 keeps crashing for people on Jaunty, which is pretty annoying, so it sends
