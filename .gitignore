@@ -1,3 +1,4 @@
 *.pyc
-output
 env
+output
+pelican-bootstrap3
