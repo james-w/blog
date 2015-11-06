@@ -1,0 +1,231 @@
+<html>
+   <title>Porting plugins to the Xfce 4.4 panel</title>
+
+<body>
+<p>
+With the 4.4 panel comes a new API. This change is to allow external plugins, which are run as processes separate from the panel, increasing its stability. This means that all plugins for the 4.2 panel have to be ported to work with the new API. The process is not too difficult, and below I have tried to outline some of the steps involved in doing it.
+</p>
+<p>
+I recommed that you get hold of the xfce4-panel source, as this contains README.Plugins, which contains information about the API and how to use it, and includes lots of plugins that you can look at for examples of using the API. I also recommend that you get hold of the cpugraph plugin (version 0.3) as this contains an example of an external plugin, as well as useful examples of how to set up autotools for building an external plugin.
+</p>
+<h4>Autotools</h4>
+<p>
+The first step is to set up your plugin so that autotools will build all the relevant parts, and put them in the correct place. If your plugin doesn't use autotools then you need to do the same things as below in your Makefile.
+</p>
+<p>
+First you need to check that the correct version of the panel is available to compile against. Edit configure.ac and find a line that looks something like
+<p>
+
+<blockquote><p>XDT_XFCE_PANEL_PLUGIN([XFCE4PANEL], [4.2.0])</p></blockquote>
+
+<p>
+and edit this so that it looks like
+</p>
+
+<blockquote><p>XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-1.0], [4.3.20])</p></blockquote>
+<p>
+While you are editing configure.ac you should also bump your version numbers.
+</p>
+<p>
+Then you need to alter the way that the plugin is built so that it is an executable rather than a shared library. Edit the Makefile.am in the source directory of the plugin so that it looks something like
+</p>
+<blockquote><p>
+plugindir = $(libexecdir)/xfce4/panel-plugins<br />
+plugin_PROGRAMS = xfce4-wavelan-plugin<br />
+
+xfce4_wavelan_plugin_LDFLAGS = @LIBXFCE4PANEL_LIBS@<br />
+
+xfce4_wavelan_plugin_SOURCES = /*list the source files of your plugin here*/<br />
+
+xfce4_wavelan_plugin_CFLAGS = @LIBXFCE4PANEL_CFLAGS@<br />
+</p></blockquote>
+<p>
+The new panel looks for .desktop files in /usr/share/xfce4/panel-plugins to find out what plugins are available. You need to create one of these files, see README.Plugins for information on what it contains. A trick is employed to get the correct installation path in to the file, if you use intltool in your plugin see
+the cpugraph plugin to see how to do this, if not then create a file in your source directory names like pluginname.desktop.in, and put something like this in it.
+</p>
+<blockquote><p>
+[Xfce Panel]<br />
+Type=X-XFCE-PanelPlugin<br />
+Encoding=UTF-8<br />
+Name=Wavelan<br />
+Comment=View the status of a wireless network<br />
+Icon=xfce-mouse<br />
+X-XFCE-Exec=@PLUGIN_PATH@/xfce4-wavelan-plugin<br />
+</p></blockquote>
+<p>
+Then the makefile needs to be changed to process this file to create the one to
+be installed. Edit Makefile.am again and add the following (different for intltool users)
+</p>
+
+<blockquote><p>
+# .desktop file<br />
+#<br />
+# Some automake trickery here. Because we cannot use $(libexecdir) in the<br />
+# automake stage, we'll use sed to get the full path into the .desktop file.<br />
+#<br />
+desktop_in_files = wavelan.desktop.in<br />
+<br />
+desktopdir = $(datadir)/xfce4/panel-plugins<br />
+desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)<br />
+<br />
+EXTRA_DIST = $(desktop_in_files)<br />
+<br />
+DISTCLEANFILES = $(desktop_DATA)<br />
+<br />
+# get full path into .desktop file<br />
+%.desktop: %.desktop.in<br />
+  sed -e "s^@PLUGIN_PATH@^$(libexecdir)/xfce4/panel-plugins^" \<br />
+    $< > $@<br />
+</p></blockquote>
+<p>
+Make sure the last two lines are indented by tabs, and that your editor has not
+expanded them to spaces.
+</p>
+<p>
+Now you can run xdt-autogen to recreate the configure script and Makefile.in etc.
+</p>
+
+<h4>Changing the code</h4>
+
+<p>
+The code needs to be changed to use the new initialisation hook, and the new callbacks for events. See the README.Plugins for a description of the available callbacks.
+</p>
+
+<p>
+The includes you plugin uses may need to be changed. If you use the util or gui packages then you only need to include
+</p>
+
+<blockquote><p>
+#include &lt;libxfce4util/libxfce4util.h&gt;<br />
+#include &lt;libxfcegui4/libxfcegui4.h&gt;<br />
+</p></blockquote>
+
+<p>
+To import the panel stuff you will need to add
+</p>
+
+<blockquote><p>
+#include &lt;libxfce4panel/xfce-panel-plugin.h&gt;<br />
+</p></blockquote>
+
+<p>
+You may also find the following two useful later on.
+</p>
+
+<blockquote><p>
+#include &lt;libxfce4panel/xfce-panel-convenience.h&gt;<br />
+#include &lt;libxfce4panel/xfce-hvbox.h&gt;<br />
+</p></blockquote>
+<p>
+The first thing to add is the hook that will allow the panel to create an instance of your plugin.
+</p>
+
+<blockquote><p>
+XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL(wavelan_construct);<br />
+</p></blockquote>
+<p>
+Then you need to provide the function named to that macro, which will create an
+instance of the plugin, and link it in to the panel to receive events that you care about. This will look something like
+</p>
+
+<blockquote><p>
+static void<br />
+wavelan_construct (XfcePanelPlugin *plugin)<br />
+{<br />
+<br />
+  /* The function that creates an instance of your plugin<br />
+    and initialises all the values */<br />
+  t_wavelan *wavelan = wavelan_new(plugin);<br />
+<br />
+  /* The callback to be informed when the panel changes<br />
+    between horizontal and vertical. Use this if you care<br />
+    which way up your plugin is */<br />
+  g_signal_connect (plugin, "orientation-changed",<br />
+      G_CALLBACK (wavelan_orientation_changed), wavelan);<br />
+<br />
+  /* called when the panel changes size. You should register this<br />
+    and set size hints in the callback function */<br />
+  g_signal_connect (plugin, "size-changed",<br />
+      G_CALLBACK (wavelan_size_changed), wavelan);<br />
+<br />
+  /* Called to indicate the plugin should free all of it's data<br />
+    as it is not needed anymore */<br />
+  g_signal_connect (plugin, "free-data",<br />
+      G_CALLBACK (wavelan_free_data), wavelan);<br />
+<br />
+  /* Called to indicate the panel should save its configuration<br />
+    data */<br />
+  g_signal_connect (plugin, "save",<br />
+      G_CALLBACK (wavelan_save), wavelan);<br />
+<br />
+  /* IMPORTANT: this tells the panel to show a menu when the<br />
+    user right clicks on your plugin. Without this the user<br />
+    will not be able to remove your plugin easily*/<br />
+  xfce_panel_plugin_menu_show_configure (plugin);<br />
+<br />
+  /* Called when the user chooses the properties option from<br />
+    the right click menu. Here you should create a dialog for<br />
+    the user to change configuration options */<br />
+  g_signal_connect (plugin, "configure-plugin",<br />
+      G_CALLBACK (wavelan_configure), wavelan);<br />
+<br />
+}<br />
+</p></blockquote>
+
+<p>
+Then you need to write all of the callback functions that you defined there. These can be simple wrappers around the functions you previously had (you may need to change arguments though). For instance
+</p>
+
+<blockquote><p>
+void<br />
+wavelan_save (XfcePanelPlugin *plugin, t_wavelan *wavelan)<br />
+{<br />
+  wavelan_write_config(plugin, wavelan);<br />
+}<br />
+<br />
+static void<br />
+wavelan_write_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)<br />
+{<br />
+  char *file;<br />
+  XfceRc *rc;<br />
+<br />
+  if (!(file = xfce_panel_plugin_save_location (plugin, TRUE)))<br />
+  {<br />
+    return;<br />
+  }<br />
+<br />
+  rc = xfce_rc_simple_open (file, FALSE);<br />
+<br />
+  g_free (file);<br />
+<br />
+  if (!rc)<br />
+    return;<br />
+<br />
+  if (wavelan->interface)<br />
+  {<br />
+    xfce_rc_write_entry (rc, "Interface", wavelan->interface);<br />
+  }<br />
+  xfce_rc_write_bool_entry (rc, "Autohide", wavelan->autohide);<br />
+<br />
+  xfce_rc_close(rc);<br />
+<br />
+}<br />
+</p></blockquote>
+
+<p>
+The code above also shows the new way of dealing with rc files (which you should use). When all of this is done you can try compiling the plugin. You may find you have to change more code to get it to compile, it depends on the plugin.
+</p>
+
+<p>
+When you can compile it try installing it and loading it in to the panel. If it
+is not present in the list of plugins check that the .desktop file is in the right place, and contains the right information (a panel restart might be required, I never quite worked it out). If the plugin does not load then try killing the
+panel and launching it from a terminal and watching for errors.
+</p>
+
+<p>
+Good luck, and let me know if I have made any mistakes or need to add anything.
+</p>
+
+</body>
+</html>
+

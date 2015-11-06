@@ -1,0 +1,36 @@
+Xfce4 Wavelan plugin 0.5.1 released
+
+<p>
+After I got a working wireless card I was finally able to fix the
+xfce4-wavelan plugin. After I had ported it to the Xfce 4.4 API it stopped
+working on a lot of systems. I don't think that I caused this, I think it was
+more the recompilation against updated wireless stack in the kernel that was
+what highlighted it.
+</p>
+
+<p>
+The fix was quite simple in the end. I looked at the source of wireless-tools,
+and came up with this diff.
+
+<blockquote><p>
+-  wreq.u.data.length = 0;<br />
++  wreq.u.data.length = sizeof(struct iw_statistics);
+</p></blockquote>
+
+It seems some implementations interpreted the 0 as some large number or
+similar, most took it to mean 0, and returned E2BIG. Setting it to the size of
+the returned object allowed it to work.
+</p>
+
+<p>
+Until I get a goodies account sorted out then I will host the release at
+<a href="http://jameswestby.net/debian/">http://jameswestby.net/debian/</a>,
+including some unofficial Debian packages.
+</p>
+
+<p>
+[Update: I have just release 0.5.2 as well, this fixes the other bugs that I
+wanted to. Only one left that I know about (stats slightly wrong sometimes,
+but I don't know if that can be helped).]
+</p>
+

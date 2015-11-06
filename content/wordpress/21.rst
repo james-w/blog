@@ -1,0 +1,5 @@
+xubuntu live cd username
+
+<p>
+Maybe my google skills are failing me, but I was trying to use an xubuntu live cd I had lying around to resize some partitions on a VM, and I couldn't find the username and password that are required to login. Someone on #xubuntu gave me a pointer and so I found that it was ubuntu and no password. I'm just sticking it here in the hope that it might provide a useful search result for someone else. Hopefully this sort of information will be put somewhere more prominent around t xubuntu website.
+</p>

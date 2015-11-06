@@ -1,0 +1,44 @@
+Success with the rt61 driver
+
+<p>
+So after I had such a <a
+href="http://jameswestby.net/weblog/tech/00-rt2500-nightmare.html">problem</a> 
+with my rt2500 based card, I ordered an rt61 based one. It arrived this
+morning, and it works. Here's what I did to get it to work.
+</p>
+
+<p>
+First download the <a
+href="http://rt2x00.serialmonkey.com/wiki/index.php/Downloads">
+cvs snapshot</a> driver. The beta release one doesn't work, and you shouldn't
+try it. Untar it and go in to the Module subdir. Then run make. The make
+install looked a little dodgy to me, so I copied the driver across and ran
+depmod.
+</p>
+
+<blockquote><p>
+# cp rt61.ko /lib/modules/$(uname -r)/kernel/net/wireless/
+# depmod -a. 
+</p></blockquote>
+
+<p>
+Then grab the the firmware from <a
+href="http://www.ralinktech.com/supp-1.htm">RaLink</a> and unzip the files in
+to /lib/firmware. 
+</p>
+
+<p>
+Then add the alias
+</p>
+
+<blockquote><p>
+# echo "alias ra0 rt61" >> /etc/modprobe.conf
+</p></blockquote>
+
+<p>
+The interface will be called ra0, so change any config files (e.g.
+/etc/network/interfaces) to reflect this. You should then be able to ifup ra0
+and have the interface work. Good luck!
+</p>
+
+

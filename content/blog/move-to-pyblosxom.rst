@@ -1,0 +1,16 @@
+I've moved to pyBlosxom
+
+
+<p>
+If you've ever been here before then you might have noticed that I have moved
+my 'blog to <a href="http://pyblosxom.sourceforge.net/">pyBlosxom</a>. I did this as wordpress was a little large for my
+needs, and didn't make it this easy to create a post, meaning I was wirting
+less entries.
+</p>
+<p>
+I have endevoured to keep the permalinks from my wordpress entries active for
+those liks that were in a couple of pages.
+</p>
+<p>
+Now I just need to make it look a bit cleaner and I'll be happy
+</p>

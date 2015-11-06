@@ -1,0 +1,33 @@
+ssl-cert2 Proposal
+
+<p>
+After a <a href="http://lists.debian.org/debian-devel/2006/06/msg01288.html">
+discussion</a> <a
+href="http://lists.debian.org/debian-devel/2006/07/msg00034.html">on</a> 
+the debian-devel mailing list about having a system for unifying the way 
+packages create SSL certificates, a couple of things became apparent. Firstly 
+that the idea was a good one, and secondly that the existing tool that tries 
+to do this (<a
+href="http://packages.qa.debian.org/s/ssl-cert.html">ssl-cert</a>) is not <a
+href="http://bugs.debian.org/cgi-bin/pkgreport.cgi?src=ssl-cert">good
+enough</a>.
+</p>
+
+<p>
+So I decided that I could do better and started writing the next generation of
+the tool. This version aims to have different modes of operation, and allow
+the system admin the choice of how certificates should be handled. As an added
+bonus it makes it easier for package maintainers to create and use SSL
+certificates.
+</p>
+
+<p>
+You can see an overview of the design, and the current status of the work <a
+href="http://wiki.debian.org/SslCertificateHandling">here</a>. There is also 
+the source code of the project in a <a 
+href="http://jameswestby.net/bzr/ssl-cert2/">bzr branch</a>. I would welcome
+any comments that anyone has on the design of the project, as I am sure I
+haven't thought of every situation yet.
+</p>
+
+

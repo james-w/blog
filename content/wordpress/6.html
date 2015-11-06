@@ -1,0 +1,22 @@
+<html>
+<head>
+   <title>Securing WordPress2 admin with SSL, another way.</title>
+   <meta name="date" content="2006-04-15 04:09" />
+   <meta name="slug" content="wordpress/6.html" />
+</head>
+<body>
+
+<p>So ever since I installed WordPress I have been wanting to use SSL for logins and  admin, but everything I tried seemed to have some drawbacks.</p>
+<p>First I tried the mod_rewrite sugestion from wordpress.org, but this still had cookies travelling over non-ssl, and also meant that each request was redirected from https to http doubling the required number of requests, and meaning that any user would have to trust my SSL cert even if they weren&#39;t going to use SSL.</p>
+<p>Then I tried the secure-admin plugin that seems to be quite new, but this prevented me from accessing the admin section at all. I think this is because I am using the latest SVN WordPress and so the plugin might not have been updated to work with it.</p>
+<p><a id="more-6"></a></p>
+<p>With help from <a href="http://noctis.de/2006/03/using-wordpress-with-ssl/" title="here">here</a> and <a href="http://blog.blackdown.de/2006/01/22/securing-wordpress-2-admin-access-with-ssl/" title="here">here</a> I have a solution that works for me.</p>
+
+<p>Firstly cookies are set to be secure only, so that should prevent anyone being able to snoop my session. Secondly the site works normally over http for most things, logins and admin are redirected to https. I don&#39;t allow anyone to register on my site, so this only has to work for me, and I&#39;m not sure how it would fare if you want your users logged in. This patch only requires an SSL enabled server, it doesn&#8217;t require mod_proxy or anything, though mod_rewrite can make things a bit cleaner.</p>
+<p>If anyone is interested then there is a patch against the SVN of 2006-04-14 at <a href="http://jameswestby.net/ssl-admin.patch" title="patch">http://jameswestby.net/ssl-admin.patch</a>. It comes with no warranty, and you are free do distribute and modify it as you wish. If you do make a useful change then perhaps you could notify me and I could incorporate it in to my version.</p>
+<p>I have tried to document the effect of the patch within the file, but if you feel that you would like more information then please just ask. The only configuration that you have to do is change one line in wp-config.php to reflect the address you would like to use for admin over SSL. I am working on incorporating this in to the usual options system.</p>
+<p>[EDIT - I think this patch breaks the preview (if you hit save and continue editing while drafting the preview reports that there is no such article, is that normal behaviour?)]
+</p>
+
+</body>
+</html>

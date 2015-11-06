@@ -1,0 +1,44 @@
+Dealing with sessions in xfce4
+
+<p>So another post trying to help with common problems in xfce4. This time it is sessions.</p>
+<p>By default xfce4 uses a session manager to decide which programs to start when logging in. There is also a mechanism for autostarting programs which is more appropriate for external programs. Here are some of the problems that often come up relating to sessions.</p>
+<ul>
+<li>Wanting to start programs with xfce4 (easy)</li>
+<li>Parts of xfce4 not starting (e.g. xfwm4 or the panel) (almost as easy)</li>
+<li>Multiple instances of an app running at startup (pretty easy again)</li>
+
+<li>Crud lying around from old versions (slightly more difficult). This can be a reason for xfce4 starting up very slowly</li>
+</ul>
+<p>There are two ways of dealing with these problems. The first is pretty easy but requires logging out. The second is slightly more difficult, but can be done without logging out. The second technique is better suited to the last two problems listed above than the first two.<br />
+<a id="more-19"></a></p>
+<h4>Method 1</h4>
+<p>First you need to enable saving sessions on logout. Go to the settings manager, and go to the &#8220;Sessions and Startup&#8221; page. Then check &#8220;Automatically save session on logout&#8221; and close it.</p>
+<p>Now set up the session exactly how you want it to start. For instance get the panel running if it is not by going to a terminal and typing xfce4-panel. When you have it set up the way you want you should log out. When you log back in make sure everything is how you want it. If an app is not started that you want it to then you need to find a different way to do this, see the section on autostart at the bottom of this post. I suggest you then disable saving of sessions by unchecking the box in the settings manager the you checked a minute ago. This will make sure that your session stays that way for ever. If you ever want to make a change then you can go through this procedure again.</p>
+
+<h4>Method 2</h4>
+<p>This method involves editing directly the session managers config file for the session you are using. These files are located under ~/.cache/sessions/xfce4-session-hostname:X, where hostname is the hostname of your computer and X is the display you are using (usually 0). Open up this file in your favourite editor and have a look at it.</p>
+<p>You will see groups of entries name Client0_*, Client1_*, etc. Each group of entries corresponds to one program that is launched. Look at each line that starts with ClientX_Program, and find the ones that you do not want. When you find one delet all of the lines that have the same Client* entry as the one that you do not want, e.g. if you don&#8217;t want (if you are on 4.4) </p>
+<blockquote><p>
+Client1_Program=xftaskbar4
+</p></blockquote>
+<p>then delet any line beginning with Client1.</p>
+<p>You can repeat this process for all of the programs that you do not want. </p>
+<p>When you have removed all of the unwanted entries then you need to get the file in to a state the the session manager can use again. To do this you need to renumber all of the ClientX lines so that the numbers are sequential, you need Client0_*, then Client1_*, etc, until you run out of entries, with no gaps in the numbers.</p>
+<p>There is one final change to make, find the line that says </p>
+
+<blockquote><p>Count=3</p></blockquote>
+<p>or similar and change it to relect the actual number of programs left in the file. For instance if it said 3 before and you deleted 1 program then change it to 2. As a check it should be equal to the highest numbered Client line plus 1, if not then check your counting and numbering.</p>
+<p>When you have finished save the file and all should be well next time you log in.</p>
+<h4>Autostart</h4>
+<p>To get external programs to start when you log in it is best to use the autostart features of xfce4, rather than the session manager. </p>
+<p>If you are using 4.4 then simply open a terminal and type </p>
+<blockquote><p>
+xfce4-autostart-editor
+</p></blockquote>
+<p>This will open a graphical editor for your autostart items. You can check and uncheck the boxes to enable different programs, and if you click &#8220;Add&#8221; you can add new programs to run. </p>
+
+<p>If you are on 4.2 then you can use the ~/Desktop/Autostart folder to create programs to autstart. If you simply want a program to run then create a symlink in this directory, e.g.</p>
+<blockquote><p>
+ln -s /usr/bin/firefox ~/Desktop/Autostart/firefox
+</p></blockquote>
+<p>If you want to do something more exciting, then create a shell script in this directory to do what you want, and mak it executable, it will then be run on autostart.</p>

@@ -1,0 +1,23 @@
+<html>
+<head>
+   <title>First post - X.org 7 in Debian unstable</title>
+   <meta name="date" content="2006-04-14 02:36" />
+   <meta name="slug" content="wordpress/3.html" />
+</head>
+<body>
+
+<p>So I wanted to get my hands dirty and try something that was going to live up to the label &#8220;unstable&#8221; as a 2.6.16 kernel hadn&#8217;t really managed that. There were a few posts on the debian-user mailing list this morning that seemed to suggest that it may not go smoothly, so I thought I&#8217;d have a go. It&#8217;s not really the time to be trying to break my main box, but I thought I&#8217;d give it a go anyway.</p>
+<p>So using aptitude and doing some manual dependency resolution (including a new nvidia kernel module using the fantastic module-assistant) I got a bunch of packages to install, many of them with names xserver-xorg-.* It all settled down after a couple of debconf questions that I probably should have paid more attention to, the screen seemed to flash, but maybe that was the lack of sleep, and everything went quiet.<br />
+
+So i then logged out of XFCE and killed the X server, the screen flickered for a bit as it is prone to do, but KDM didn&#8217;t come up. Oh dear I thought, but I didn&#8217;t panic, who hasn&#8217;t had problems starting X, I certainly had plenty before I worked out how to get my Nvidia card to play nicely during kernel recompiles. So I did the normal thing and checked /var/log/Xorg.0.log and it complained about lack of fonts, a quick check with lynx (how glad am I that I can do that now rather than dropping out back in to XP?) suggested that I should check the font paths and not bother with xfs. Checking the paths showed that the location of the fonts had moved, or that the xorg.conf had been rewritten (I suspect the former), and changing the paths bought KDM up.</p>
+<p><a id="more-3"></a></p>
+<p>So I then enabled compositing and the nvidia acceleration for it and restarted and it came up, but I didn&#8217;t know if it had worked. So I switched in to KDE and tried to enable transparency, but nothing seemed to show, so I went back to XFCE and recompiled xfwm with its compositing manager (after grabbing some extra libs and learning a little about PKG_CONFIG_PATH). Creating a transparency file in my .xfce4 dir and restarting confirmed that it worked.</p>
+<p>So i wanted to play with this new gimmick and so grabbed some apps, transset and transset-df. A bit of tweaking with keyboard shortcuts, and using the superior transset-df means that I can now alter the transparency of the window under the cursor with keyboard shortcuts. I also tried to look into transparency on inactive windows, and transinactive from the xfce team does this, but it doesn&#8217;t play that nice with virtual desktops so I&#8217;ve dropped it for now. It looks pretty simple, so it might be worth a hack later. I saw a suggestion to have opaque text in translucent terminals, which seemed like a good idea, but I couldn&#8217;t find any code for doing this to xterm, only a mention that someone had done it. I&#8217;ll keep an eye out though.</p>
+<p>However, all was not rosy, as I couldn&#8217;t log out of XFCE, the panel would go, but everything else would remain. xfce4-session-logout complained there was no session manager running when there was (maybe worth improving the error message if possible), .xsession-errors was reporting  ICE connection rejected. I eventually bothered to look at the top of that file and saw that xrdb couldn&#8217;t be found. locate showed it was in /usr/X11R6/bin, and I thought about just sticking that on my PATH (what? it&#8217;s got bin in the name) but the folks on #debian-xfce said that it wasn&#8217;t on their path, and their xrdb was in /usr/bin/X11. So apt-file showed me where I could get this binary from, and I upgraded to the unstable version which solved the problem.</p>
+
+<p>So all in all, not too bad for an upgrade to a brand spanking new major revision of an important package that was causing lots of problems. My troubles mainly came from trying to use as few packages as possible from unstable.</p>
+<p>But, you know what? After all that I&#8217;m not all that keen on transparency, and I&#8217;ll probably end up turning it off most of the time. It hasn&#8217;t made a noticable impact on performance yet. Maybe when I get rid of all the unneeded modules I can have a nice trim X server which might aid performance anyway.
+</p>
+
+</body>
+</html>

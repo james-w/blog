@@ -1,0 +1,11 @@
+Transparent Xfce Terminal
+
+<p>After I said that I wasn&#8217;t that bothered about transparency I found myself drawn towards <a href="http://xfce-diary.blogspot.com/2006/03/transparent-terminal-hack.html">this.</a> I thought that the opaque text would make this more usable that plain transparency. I was packaging the Xfce4.4 beta, and compiled Terminal as part of this, and thought I&#8217;d add this hack to it. It worked OK, but you could only use a black terminal, and the alpha was hardcoded. </p>
+<p><a id="more-11"></a></p>
+<p>So I went out and found <a href="http://people.freedesktop.org/~krh/gnome-terminal/">this</a> which does the same thing for gnome-terminal, and so shares the backend with Terminal. I used the patch for libvte, and ported the changes to Terminal. It works quite well I think, and with Terminal&#8217;s ability to lose it&#8217;s own window decorations you could do some interesting things.</p>
+
+<p>If anyone is interested in the full patch you can get the patch for Terminal <a href="http://jameswestby.net/terminal-transparency.patch">here</a> and I&#8217;ve updated the patch to work with the libvte shipped with Debian <a href="http://jameswestby.net/vte-transparency.patch">here</a>. </p>
+<p>So, the obligatory screenshot. Looks pretty unusable I know, and it is like that, but I wanted to show what could be done if you wanted.</p>
+<p><a href="http://jameswestby.net/images/screenshot.jpg"><img id="image17" src="http://jameswestby.net/screenshot-thumb.thumbnail.jpg" alt="Transparent Terminal screenshot thumbnail" /></a>
+</p>
+
