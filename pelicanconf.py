@@ -25,6 +25,7 @@ LINKS = ()
 # Social widget
 SOCIAL = (('Twitter', 'https://twitter.com/jdwestby'),
           ('GitHub', 'https://github.com/james-w/'),
+          ('Launchpad', 'https://launchpad.net/~james-w', 'pencil'),
         )
 
 DEFAULT_PAGINATION = 20
