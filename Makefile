@@ -94,5 +94,8 @@ publish:
 ssh_upload: publish
 	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
 
+rsync_upload: publish
+	rsync -avc --delete -e "ssh -p $(SSH_PORT)" $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
+
 .PHONY: html help clean regenerate serve serve-global devserver publish ssh_upload deps
 .DEFAULT_GOAL := help
