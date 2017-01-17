@@ -44,3 +44,9 @@ TWITTER_USERNAME = 'jdwestby'
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+SHARIFF = True
+SHARIFF_LANG = 'en'
+SHARIFF_SERVICES = "[&quot;twitter&quot;,&quot;reddit&quot;,&quot;facebook&quot;,&quot;linkedin&quot;,&quot;googleplus&quot;]"
+SHARIFF_THEME = 'grey'
+SHARIFF_TWITTER_VIA = True
