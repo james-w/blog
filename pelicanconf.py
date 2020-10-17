@@ -56,3 +56,12 @@ PLUGINS = ['i18n_subsites']
 JINJA_ENVIRONMENT = {
   'extensions': ['jinja2.ext.i18n']
 }
+
+MARKDOWN = {
+  'extension_configs': {
+      'markdown.extensions.codehilite': {'css_class': 'highlight', 'guess_lang': False},
+      'markdown.extensions.extra': {},
+      'markdown.extensions.meta': {},
+  },
+  'output_format': 'html5',
+}
