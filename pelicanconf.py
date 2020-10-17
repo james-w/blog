@@ -30,7 +30,7 @@ SOCIAL = (('Twitter', 'https://twitter.com/jdwestby'),
 
 DEFAULT_PAGINATION = 20
 
-THEME = 'pelican-bootstrap3'
+THEME = 'pelican-themes/pelican-bootstrap3'
 BOOTSTRAP_THEME = 'readable'
 
 DISPLAY_CATEGORIES_ON_MENU = False

@@ -31,7 +31,7 @@ $(ENV):
 
 deps:
 	$(PIP) install -r requirements.txt
-	[ -e pelican-bootstrap3 ] || git clone https://github.com/DandyDev/pelican-bootstrap3
+	[ -e pelican-themes ] || git clone https://github.com/getpelican/pelican-themes.git
 
 help:
 	@echo 'Makefile for a pelican Web site                                           '
