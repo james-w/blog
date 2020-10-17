@@ -47,6 +47,12 @@ TWITTER_USERNAME = 'jdwestby'
 
 SHARIFF = True
 SHARIFF_LANG = 'en'
-SHARIFF_SERVICES = "[&quot;twitter&quot;,&quot;reddit&quot;,&quot;facebook&quot;,&quot;linkedin&quot;,&quot;googleplus&quot;]"
+SHARIFF_SERVICES = "[&quot;twitter&quot;,&quot;reddit&quot;,&quot;facebook&quot;,&quot;linkedin&quot;]"
 SHARIFF_THEME = 'grey'
 SHARIFF_TWITTER_VIA = True
+
+PLUGIN_PATHS = ['pelican-plugins']
+PLUGINS = ['i18n_subsites']
+JINJA_ENVIRONMENT = {
+  'extensions': ['jinja2.ext.i18n']
+}

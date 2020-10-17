@@ -32,6 +32,7 @@ $(ENV):
 deps:
 	$(PIP) install -r requirements.txt
 	[ -e pelican-themes ] || git clone https://github.com/getpelican/pelican-themes.git
+	[ -e pelican-plugins ] || git clone https://github.com/getpelican/pelican-plugins.git
 
 help:
 	@echo 'Makefile for a pelican Web site                                           '
